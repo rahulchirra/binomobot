@@ -10,7 +10,6 @@ from datetime import datetime
 from random import randint
 import requests
 import matplotlib.pyplot as plt
-from playsound import playsound
 
 # --- Telegram Config ---
 TELEGRAM_TOKEN = "7446804468:AAH8LgjrU0JrmKrnWY8u5wjoUIFA16wJqXo"
@@ -80,7 +79,6 @@ class BinomoBot:
             return 0
 
     def autoclick(self, compen):
-        playsound("./sounds/trade_alert.mp3", False)
         bid = self.driver.find_element("xpath", '//*[@id="amount-counter"]/div[1]/div[1]/vui-input-number/input')
         bid.send_keys(Keys.CONTROL, 'a')
         bid.send_keys(compen)
